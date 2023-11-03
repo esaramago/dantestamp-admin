@@ -1635,7 +1635,7 @@
     semver "7.5.4"
     umzug "3.2.1"
 
-"@strapi/design-system@1.13.0", "@strapi/design-system@^1.12.0":
+"@strapi/design-system@1.13.0":
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@strapi/design-system/-/design-system-1.13.0.tgz#6501c4e48941c16367ec6c8e0c0f5b9849530bed"
   integrity sha512-Z9wZyqzRKNXKNkeNAwSLYOHshXW6UmqsOvaeUiUDfE77hvsJOzR60nLDDfo9pzQ/24t9332NWUUa24mSXFt97Q==
@@ -1702,7 +1702,7 @@
     react-query "3.39.3"
     react-select "5.7.0"
 
-"@strapi/icons@1.13.0", "@strapi/icons@^1.12.0":
+"@strapi/icons@1.13.0":
   version "1.13.0"
   resolved "https://registry.yarnpkg.com/@strapi/icons/-/icons-1.13.0.tgz#0020560b5bed008ddc39aa177b264cb3bebe8b67"
   integrity sha512-bmFJvyM75nuVyJVq4bgHxRYwu9eEkmRKNipEb/GBTBvvkHGN0GTHLOAedGpKGvB7RwcclbaymOP7oBlxahOmsw==
@@ -1752,16 +1752,6 @@
     lodash "4.17.21"
     qs "6.11.1"
     sift "16.0.1"
-
-"@strapi/plugin-cloud@4.15.1":
-  version "4.15.1"
-  resolved "https://registry.yarnpkg.com/@strapi/plugin-cloud/-/plugin-cloud-4.15.1.tgz#f3c0184549f4f803b3ef9a8d6caeed630a30ba93"
-  integrity sha512-8jeOfye8zzoS0OLWZddtPc+7V9szlEkkeNy+/aUJe2aYudJg07HhpjTH1Pmoz6RFgXki9zDygy7AyFrOnim30g==
-  dependencies:
-    "@strapi/design-system" "^1.12.0"
-    "@strapi/helper-plugin" "4.15.1"
-    "@strapi/icons" "^1.12.0"
-    react-intl "6.4.1"
 
 "@strapi/plugin-content-manager@4.15.1":
   version "4.15.1"
@@ -2034,6 +2024,18 @@
   version "4.15.1"
   resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.15.1.tgz#08eb50f74f610ce1fe159d0a7b5def827cd592bd"
   integrity sha512-OdarLYB8KRuLWrKeOIAXBWBAtDjcK5U2MgEsFEhdBJNWgIOSmVa27IQk4ZSLmq02Ylp/YOqfpvPxf3CIREo5/g==
+  dependencies:
+    "@sindresorhus/slugify" "1.1.0"
+    date-fns "2.30.0"
+    http-errors "1.8.1"
+    lodash "4.17.21"
+    p-map "4.0.0"
+    yup "0.32.9"
+
+"@strapi/utils@^4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@strapi/utils/-/utils-4.15.0.tgz#1f4cf0343b7dbc91afa0907dd5afb732b1c7efed"
+  integrity sha512-8X7YNGpL7OdJOF3Sx3gnnvIt+omKPiZqoqCvLIfVxbpt1o597cmaVaBHeCWAYBkd9xqmdnalvtGmEjMtjS+ILw==
   dependencies:
     "@sindresorhus/slugify" "1.1.0"
     date-fns "2.30.0"

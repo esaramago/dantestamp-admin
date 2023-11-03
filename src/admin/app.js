@@ -1,5 +1,3 @@
-/* import favicon from './extensions/favicon.png' */
-
 const config = {
   locales: ['pt'],
   translations: {
