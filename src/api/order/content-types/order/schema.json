@@ -19,6 +19,24 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::product.product"
+    },
+    "email": {
+      "type": "email"
+    },
+    "isPortugal": {
+      "type": "boolean"
+    },
+    "address": {
+      "type": "text"
+    },
+    "zipCode1": {
+      "type": "integer"
+    },
+    "zipCode2": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
     }
   }
 }

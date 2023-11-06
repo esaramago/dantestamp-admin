@@ -700,10 +700,10 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    code: Attribute.String &
+    slug: Attribute.String &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -748,6 +748,12 @@ export interface ApiOrderOrder extends Schema.CollectionType {
       'oneToOne',
       'api::product.product'
     >;
+    email: Attribute.Email;
+    isPortugal: Attribute.Boolean;
+    address: Attribute.Text;
+    zipCode1: Attribute.Integer;
+    zipCode2: Attribute.Integer;
+    location: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -793,13 +799,13 @@ export interface ApiProductProduct extends Schema.CollectionType {
     price: Attribute.Decimal &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     height: Attribute.Integer &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Attribute.SetMinMax<{
@@ -808,7 +814,7 @@ export interface ApiProductProduct extends Schema.CollectionType {
     width: Attribute.Integer &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Attribute.SetMinMax<{
@@ -817,14 +823,14 @@ export interface ApiProductProduct extends Schema.CollectionType {
     thumbnail: Attribute.Media &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     isAvailable: Attribute.Boolean &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }> &
       Attribute.DefaultTo<true>;
@@ -857,6 +863,38 @@ export interface ApiProductProduct extends Schema.CollectionType {
   };
 }
 
+export interface ApiShippingCostShippingCost extends Schema.CollectionType {
+  collectionName: 'shipping_costs';
+  info: {
+    singularName: 'shipping-cost';
+    pluralName: 'shipping-costs';
+    displayName: 'shippingCost';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    countryCode: Attribute.String;
+    cost: Attribute.Decimal;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::shipping-cost.shipping-cost',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::shipping-cost.shipping-cost',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -876,6 +914,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
+      'api::shipping-cost.shipping-cost': ApiShippingCostShippingCost;
     }
   }
 }
